@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp-container
+        image: myapp:1.0  # Initial version change this using kubectl edit then check the status of the rollout
+    strategy:
+      type: RollingUpdate
+      rollingUpdate:
+          maxUnavailable: 25%
+          maxSurge: 25%
+      # strategy:
+      #   type: Recreate
+
