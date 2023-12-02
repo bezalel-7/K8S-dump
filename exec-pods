@@ -1,2 +1,0 @@
-kubectl exec -it pod-httpd -- /bin/bash
--- is to seprate kubectl command from /bin/bash!

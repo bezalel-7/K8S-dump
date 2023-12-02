@@ -1,0 +1,9 @@
+kubectl exec -it pod-httpd -- /bin/bash
+//-- is to seprate kubectl command from /bin/bash!
+
+
+//with default namespace
+kubectl get pods
+
+//with created namespace
+kubectl get pods -n "namespace"
