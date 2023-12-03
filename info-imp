@@ -15,3 +15,16 @@ limits specify the maximum amount of resources that the container is allowed to 
 //stratergy
 maxSurge means max number of pods that can be create while the pods are donw
 maxUnavailable mean max number of pods that can be down at a time
+
+
+// rollout
+// rollout status for current rollout
+kubectl rollout status deployment/deployment-name
+// rollout to last change
+kubectl rollout undo deployment/deployment-name
+// rollout to new change
+kubectl rollout deployment/deployment-name
+// rollout history
+kubectl rollout history deployment/deployment-name
+
+
