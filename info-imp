@@ -28,3 +28,24 @@ kubectl rollout deployment/deployment-name
 kubectl rollout history deployment/deployment-name
 
 
+//cron job
+command: This field is used to specify the command that should be run when the container starts. It is the main command that gets executed. If the command field is defined, it replaces the default command specified by the Docker image.
+
+Example:
+
+yaml
+Copy code
+command: ["/bin/my-custom-command", "arg1", "arg2"]
+In this example, the container will run /bin/my-custom-command arg1 arg2 as its main command.
+
+args: This field is used to provide additional arguments that should be passed to the command specified in the command field. It allows you to append arguments to the command.
+
+Example:
+
+yaml
+Copy code
+command: ["/bin/my-custom-command"]
+args: ["arg1", "arg2"]
+
+
+
