@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: daily-job
+spec:
+  schedule: "0 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: daily-job-container
+            image: python:3.8
+            command: ["/bin/sh", "-c"]
+            args:
+            - python -c 'print("Hello from the daily job!")'
+          restartPolicy: OnFailure
