@@ -12,3 +12,14 @@ spec:
   volumes:
   - name: myvolume
     emptyDir: {}  # An emptyDir volume is created and mounted to the specified path
+
+
+You can also use a ConfigMap or a Persistent Volume (PV) as the source for the volume. For example:
+
+volumes:
+  - name: myconfigmap
+    configMap:
+      name: my-configmap
+  - name: mypv
+    persistentVolumeClaim:
+      claimName: my-pvc
