@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+  - name: mycontainer
+    image: myimage
+    volumeMounts:
+    - name: myvolume  # The name of the volume
+      mountPath: /path/in/container  # The path in the container where the volume is mounted
+  volumes:
+  - name: myvolume
+    emptyDir: {}  # An emptyDir volume is created and mounted to the specified path
